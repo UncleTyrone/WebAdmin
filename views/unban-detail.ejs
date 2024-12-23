@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unban User Details</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <span>Hello, <%= user.username %></span>
+        </div>
+        <div class="right">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/ban">Ban</a>
+            <a href="/kick">Kick</a>
+            <a href="/unban">Unban</a>
+            
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Unban User Details</h1>
+        <p><strong>Username:</strong> <%= ban.username %></p>
+        <p><strong>Reason:</strong> <%= ban.reason %></p>
+        <p><strong>Notes:</strong> <%= ban.notes %></p>
+        <p><strong>Ban Length:</strong> <%= ban.banLength %></p>
+        <form action="/unban/<%= ban._id %>" method="POST">
+            <input type="hidden" name="robloxId" value="<%= ban.robloxId %>">
+            <button type="submit">Unban</button>
+        </form>
+        
+    </div>
+</body>
+</html>

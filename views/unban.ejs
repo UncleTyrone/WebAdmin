@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unban a User</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <span>Hello, <%= user.username %></span>
+        </div>
+        <div class="right">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/ban">Ban</a>
+            <a href="/kick">Kick</a>
+            <a href="/unban">Unban</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Unban a User</h1>
+        <ul>
+            <% bans.forEach(ban => { %>
+                <li>
+                    <a href="/unban/<%= ban._id %>"><%= ban.username %> - <%= ban.reason %></a>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <span>Hello, <%= user.username %></span>
+        </div>
+        <div class="right">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/ban">Ban</a>
+            <a href="/kick">Kick</a>
+            <a href="/unban">Unban</a>
+            
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Welcome to your Dashboard, <%= user.username %>!</h1>
+        <p>This is where you can manage your server.</p>
+    </div>
+</body>
+</html>

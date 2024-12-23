@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kick a User</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <span>Hello, <%= user.username %></span>
+        </div>
+        <div class="right">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/ban">Ban</a>
+            <a href="/kick">Kick</a>
+            <a href="/unban">Unban</a>
+            
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Kick a User</h1>
+        <form action="/kick" method="POST">
+            <div class="form-group">
+                <label for="username">Roblox Username</label>
+                <input type="text" id="username" name="username" required>
+                <small>Username populated from ID search.</small>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+                <small>This is visible to the user. You may enter a custom reason.</small>
+            </div>
+            <button type="submit">KICK</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban a User</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <span>Hello, <%= user.username %></span>
+        </div>
+        <div class="right">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/ban">Ban</a>
+            <a href="/kick">Kick</a>
+            <a href="/unban">Unban</a>
+            
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Ban a User</h1>
+        <form action="/ban" method="POST">
+            <div class="form-group">
+                <label for="username">Roblox Username</label>
+                <input type="text" id="username" name="username" required>
+                <small>Username populated from ID search.</small>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <select id="reason" name="reason" required>
+                    <option value="Bypassing Filter / Inappropriate Content">Bypassing Filter / Inappropriate Content</option>
+                    <option value="Harassment / Bullying">Harassment / Bullying</option>
+                    <option value="Cheating / Exploiting">Cheating / Exploiting</option>
+                    <option value="Spamming">Spamming</option>
+                    <option value="Impersonation">Impersonation</option>
+                    <option value="Inappropriate Username">Inappropriate Username</option>
+                    <option value="Inappropriate Avatar">Inappropriate Avatar</option>
+                    <option value="Scamming">Scamming</option>
+                    <option value="Advertising">Advertising</option>
+                    <option value="Offensive Language">Offensive Language</option>
+                    <option value="Real World Trading">Real World Trading</option>
+                    <option value="Other">Other</option>
+                </select>
+                <small>This is visible to the user. You may choose a common reason or type your own.</small>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes" rows="4" required></textarea>
+                <small>This is internal and only shown to staff.</small>
+            </div>
+            <div class="form-group">
+                <label for="banLength">Ban Length</label>
+                <select id="banLength" name="banLength" required> 
+                    <option value="1 day">1 day</option>
+                    <option value="3 days">3 days</option>
+                    <option value="5 days">5 days</option>
+                    <option value="1 week">1 week</option>
+                    <option value="2 weeks">2 weeks</option>
+                    <option value="1 month">1 month</option>
+                    <option value="2 months">2 months</option>
+                    <option value="6 months">6 months</option>
+                    <option value="1 year">1 year</option>
+                    <option value="Permanent">Permanent</option> 
+                </select>
+            </div>
+            <button type="submit">BAN</button>
+        </form>
+    </div>
+</body>
+</html>
